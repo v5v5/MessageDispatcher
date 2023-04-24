@@ -1,0 +1,16 @@
+@startuml
+
+
+User -> Controller: Send message
+
+queue Queue as Queue
+
+Controller -> Queue: Put message with priority
+"Queue dispatcher" -> Queue: Give the highest prioritized message
+"Queue dispatcher" <- Queue: Send the highest prioritized message
+
+database Database as Database
+
+"Queue dispatcher" -> Database: Save message
+
+@enduml
