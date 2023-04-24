@@ -3,7 +3,7 @@
   "source": "author",
   "destination": "book",
   "priority": "auto",
-  "message": {
+  "content": {
     "author": "Бен Кук",
     "book": "Проектирование высоконагруженных систем"
   },
