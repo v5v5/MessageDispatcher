@@ -7,16 +7,16 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class MessageDispatcherData {
+public class DefaultModelData {
     private String source;
     private String destination;
     private Integer priority;
-    private Content content;
+    private DefaultContentData defaultContentData;
 }
 
 @Data
 @Builder
-class Content {
+class DefaultContentData {
     private String author;
     private String book;
 }
