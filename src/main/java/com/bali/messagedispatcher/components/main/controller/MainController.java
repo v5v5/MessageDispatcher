@@ -1,6 +1,7 @@
 package com.bali.messagedispatcher.components.main.controller;
 
 import com.bali.messagedispatcher.utils.Randomizer;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,5 +45,10 @@ public class MainController {
     @RequestMapping(value = "/messages", method = RequestMethod.GET)
     Iterable<MainModel> getMessages() {
         return messages;
+    }
+
+    @RequestMapping(value = "/messages", method = RequestMethod.POST)
+    void postMessages(@RequestBody MainModel model) {
+        messages.add(model);
     }
 }
