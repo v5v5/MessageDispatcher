@@ -1,6 +1,8 @@
 package com.bali.messagedispatcher.components.main.controller;
 
+import com.bali.messagedispatcher.components.events.MainEventPublisher;
 import com.bali.messagedispatcher.utils.Randomizer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,6 +47,9 @@ public class MainController {
                         .build());
     }
 
+    @Autowired
+    private MainEventPublisher mainEventPublisher;
+
     @GetMapping(value = "/messages")
     ResponseEntity<Iterable<MainModel>> getMessages() {
         return ResponseEntity.ok(messages);
@@ -52,6 +57,7 @@ public class MainController {
 
     @PostMapping(value = "/messages")
     ResponseEntity<Void> postMessages(@RequestBody MainModel model) {
+        mainEventPublisher.publishEvent("Received the message with type " + model.getType());
         messages.add(model);
         return ResponseEntity.ok().build();
     }
