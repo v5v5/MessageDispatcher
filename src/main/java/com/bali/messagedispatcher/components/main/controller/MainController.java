@@ -45,6 +45,14 @@ public class MainController {
                                                 .build())
                                         .build())
                         .build());
+        messages.add(
+                MainModel.builder()
+                        .type(Type.ICHWILL)
+                        .content(
+                                IchwillModelData.builder()
+                                        .wish(Randomizer.randomString())
+                                        .build())
+                        .build());
     }
 
     @Autowired

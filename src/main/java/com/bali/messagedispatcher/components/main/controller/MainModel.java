@@ -13,7 +13,8 @@ public class MainModel {
 }
 
 enum Type {
-    DEFAULT(DefaultModelData.class);
+    DEFAULT(DefaultModelData.class),
+    ICHWILL(IchwillModelData.class);
 
     private final Class<?> clazz;
 
