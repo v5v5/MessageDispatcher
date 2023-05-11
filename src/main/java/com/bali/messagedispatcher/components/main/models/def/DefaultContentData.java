@@ -5,8 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public
-class DefaultContentData {
+public class DefaultContentData {
     private String author;
     private String book;
 }

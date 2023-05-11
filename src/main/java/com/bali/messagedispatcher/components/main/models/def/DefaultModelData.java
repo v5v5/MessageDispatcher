@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Data
 @Builder
-@AllArgsConstructor
 public class DefaultModelData {
     private String source;
     private String destination;

@@ -72,7 +72,7 @@ public class MainController {
 
     @PostMapping(value = "/messages")
     ResponseEntity<Void> postMessages(@RequestBody MainModel model) {
-        mainEventPublisher.publishEvent("Received the message with type " + model.getType());
+        mainEventPublisher.publishEvent("Server received the message with type " + model.getType());
         messages.add(model);
         return ResponseEntity.ok().build();
     }

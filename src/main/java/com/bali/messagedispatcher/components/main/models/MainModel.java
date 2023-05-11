@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Data
 @Builder
-@AllArgsConstructor
 public class MainModel {
     private ModelType type;
     private Object content;
