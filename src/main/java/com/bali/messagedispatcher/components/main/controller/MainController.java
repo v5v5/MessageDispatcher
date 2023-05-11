@@ -1,6 +1,11 @@
 package com.bali.messagedispatcher.components.main.controller;
 
 import com.bali.messagedispatcher.components.events.MainEventPublisher;
+import com.bali.messagedispatcher.components.main.models.MainModel;
+import com.bali.messagedispatcher.components.main.models.ModelType;
+import com.bali.messagedispatcher.components.main.models.def.DefaultContentData;
+import com.bali.messagedispatcher.components.main.models.def.DefaultModelData;
+import com.bali.messagedispatcher.components.main.models.ichwill.IchwillModelData;
 import com.bali.messagedispatcher.utils.Randomizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +24,13 @@ public class MainController {
     static {
         messages.add(
                 MainModel.builder()
-                        .type(Type.DEFAULT)
+                        .type(ModelType.DEFAULT)
                         .content(
                                 DefaultModelData.builder()
                                         .source(Randomizer.randomString())
                                         .destination(Randomizer.randomString())
                                         .priority(Randomizer.randomInt())
+                                        .topic(Randomizer.randomString())
                                         .defaultContentData(DefaultContentData.builder()
                                                 .author(Randomizer.randomString())
                                                 .book(Randomizer.randomString())
@@ -33,12 +39,13 @@ public class MainController {
                         .build());
         messages.add(
                 MainModel.builder()
-                        .type(Type.DEFAULT)
+                        .type(ModelType.DEFAULT)
                         .content(
                                 DefaultModelData.builder()
                                         .source(Randomizer.randomString())
                                         .destination(Randomizer.randomString())
                                         .priority(Randomizer.randomInt())
+                                        .topic(Randomizer.randomString())
                                         .defaultContentData(DefaultContentData.builder()
                                                 .author(Randomizer.randomString())
                                                 .book(Randomizer.randomString())
@@ -47,7 +54,7 @@ public class MainController {
                         .build());
         messages.add(
                 MainModel.builder()
-                        .type(Type.ICHWILL)
+                        .type(ModelType.ICHWILL)
                         .content(
                                 IchwillModelData.builder()
                                         .wish(Randomizer.randomString())

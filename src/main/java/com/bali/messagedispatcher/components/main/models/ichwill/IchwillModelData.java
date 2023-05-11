@@ -1,4 +1,4 @@
-package com.bali.messagedispatcher.components.main.controller;
+package com.bali.messagedispatcher.components.main.models.ichwill;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
