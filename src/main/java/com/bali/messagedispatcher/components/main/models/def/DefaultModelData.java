@@ -1,6 +1,5 @@
 package com.bali.messagedispatcher.components.main.models.def;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
